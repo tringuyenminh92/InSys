@@ -23,7 +23,15 @@ namespace InSys.PresentationLayer
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                                                             "~/Content/bootstrap.css",
+                                                            "~/Content/ui-grid-unstable.css",
+                                                            "~/Content/font-awesome.css",
+                                                            "~/Content/myStyle.css",
+                                                             "~/Content/gridStyleMuaHang.css",
+                                                            "~/Content/ng-tags-input.css",
+                                                            "~/Content/ng-tags-input.bootstrap.css",
+                                                             "~/Content/select.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
@@ -38,6 +46,24 @@ namespace InSys.PresentationLayer
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+
+            bundles.Add(new ScriptBundle("~/bundles/Angular").Include(
+                                                                "~/Scripts/Angular/angular.js",
+                                                                "~/Scripts/Angular/bootstrap.js",
+                                                                "~/Scripts/Angular/ui-bootstrap.js",
+                                                                "~/Scripts/Angular/ui-bootstrap-tpls.js",
+                                                                "~/Scripts/Angular/ui-grid-unstable.js",
+                                                                "~/Scripts/Angular/ng-grid-1.3.2.js",
+                                                                "~/Scripts/Angular/angular-touch.js",
+                                                                 "~/Scripts/Angular/ng-file-upload.js",
+                                                                "~/Scripts/Angular/ng-file-upload-shim.js",
+                                                                "~/Scripts/Angular/angular-route.js",
+                                                                "~/Scripts/Angular/ng-tags-input.js",
+                                                                "~/Scripts/Angular/angular-sanitize.js",
+                                                                 "~/Scripts/Angular/select.js"));
+            bundles.Add(new ScriptBundle("~/bundles/Custom").Include("~/Scripts/Custom/MyApp.js"));
+
         }
     }
 }
