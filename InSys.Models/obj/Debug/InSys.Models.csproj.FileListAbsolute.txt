@@ -1,0 +1,4 @@
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.Models\bin\Debug\InSys.Models.dll
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.Models\bin\Debug\InSys.Models.pdb
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.Models\obj\Debug\InSys.Models.dll
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.Models\obj\Debug\InSys.Models.pdb

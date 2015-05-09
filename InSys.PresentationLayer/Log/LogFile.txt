@@ -1,0 +1,18 @@
+---------------------------------------------------------LogInfo-----------------------------------------------------
+[09/05/2015 23:41][Class: InSys.PresentationLayer.Controllers.HomeController][Method: Index                         ]
+Input: 
+Exception: System.Exception: Exception of type 'System.Exception' was thrown.
+---------------------------------------------------------LogInfo-----------------------------------------------------
+
+---------------------------------------------------------LogInfo-----------------------------------------------------
+[09/05/2015 23:41][Class: InSys.PresentationLayer.Controllers.HomeController][Method: Index                         ]
+Input: 
+Exception: System.Exception: Exception of type 'System.Exception' was thrown.
+---------------------------------------------------------LogInfo-----------------------------------------------------
+
+---------------------------------------------------------LogInfo-----------------------------------------------------
+[09/05/2015 23:41][Class: InSys.PresentationLayer.Controllers.HomeController][Method: Index                         ]
+Input: 
+Exception: System.Exception: Exception of type 'System.Exception' was thrown.
+---------------------------------------------------------LogInfo-----------------------------------------------------
+

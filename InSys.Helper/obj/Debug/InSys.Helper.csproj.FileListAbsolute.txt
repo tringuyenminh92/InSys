@@ -1,0 +1,4 @@
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.Helper\bin\Debug\InSys.Helper.dll
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.Helper\bin\Debug\InSys.Helper.pdb
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.Helper\obj\Debug\InSys.Helper.dll
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.Helper\obj\Debug\InSys.Helper.pdb
