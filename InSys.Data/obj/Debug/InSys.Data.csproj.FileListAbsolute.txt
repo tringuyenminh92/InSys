@@ -1,4 +1,0 @@
-C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.Data\bin\Debug\InSys.Data.dll
-C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.Data\bin\Debug\InSys.Data.pdb
-C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.Data\obj\Debug\InSys.Data.dll
-C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.Data\obj\Debug\InSys.Data.pdb

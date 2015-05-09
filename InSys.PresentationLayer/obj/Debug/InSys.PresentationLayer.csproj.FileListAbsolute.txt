@@ -1,3 +1,4 @@
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\Newtonsoft.Json.xml
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\InSys.PresentationLayer.dll.config
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\InSys.PresentationLayer.dll
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\InSys.PresentationLayer.pdb
@@ -45,7 +46,6 @@ C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLaye
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\Microsoft.Practices.Unity.Mvc.xml
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\EntityFramework.xml
-C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\Newtonsoft.Json.xml
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\System.Net.Http.Formatting.xml
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\System.Web.Helpers.xml
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\System.Web.Http.xml
@@ -95,6 +95,5 @@ C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLaye
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\ru\System.Spatial.resources.dll
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\obj\Debug\InSys.PresentationLayer.csprojResolveAssemblyReference.cache
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\obj\Debug\InSys.PresentationLayer.dll
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\obj\Debug\InSys.PresentationLayer.pdb
