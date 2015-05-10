@@ -1,0 +1,4 @@
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.ICore\bin\Debug\InSys.ICore.dll
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.ICore\bin\Debug\InSys.ICore.pdb
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.ICore\obj\Debug\InSys.ICore.dll
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.ICore\obj\Debug\InSys.ICore.pdb

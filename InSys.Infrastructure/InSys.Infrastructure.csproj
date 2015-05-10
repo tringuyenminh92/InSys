@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8F08137C-E40A-4751-8E44-04928314EE56}</ProjectGuid>
+    <ProjectGuid>{60000667-5986-45AD-880F-4782567C37D0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InSys.Helper</RootNamespace>
-    <AssemblyName>InSys.Helper</AssemblyName>
+    <RootNamespace>InSys.Infrastructure</RootNamespace>
+    <AssemblyName>InSys.Infrastructure</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

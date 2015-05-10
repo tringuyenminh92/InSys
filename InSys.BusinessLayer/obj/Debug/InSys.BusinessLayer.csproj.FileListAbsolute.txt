@@ -1,0 +1,6 @@
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.BusinessLayer\bin\Debug\InSys.BusinessLayer.dll
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.BusinessLayer\bin\Debug\InSys.BusinessLayer.pdb
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.BusinessLayer\bin\Debug\log4net.dll
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.BusinessLayer\bin\Debug\log4net.xml
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.BusinessLayer\obj\Debug\InSys.BusinessLayer.dll
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.BusinessLayer\obj\Debug\InSys.BusinessLayer.pdb

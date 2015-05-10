@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("InSys.Helper")]
+[assembly: AssemblyTitle("InSys.Infrastructure")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("InSys.Helper")]
+[assembly: AssemblyProduct("InSys.Infrastructure")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("29d60113-aa70-4e4e-90f2-470323fd91b6")]
+[assembly: Guid("5b97f080-82cf-4a4e-8fd4-99781c5b61f7")]
 
 // Version information for an assembly consists of the following four values:
 //
