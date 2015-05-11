@@ -1,0 +1,6 @@
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Repository.Pattern\bin\Debug\InSys.Repository.Pattern.dll
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Repository.Pattern\bin\Debug\InSys.Repository.Pattern.pdb
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Repository.Pattern\obj\Debug\InSys.Repository.Pattern.dll
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Repository.Pattern\obj\Debug\InSys.Repository.Pattern.pdb
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Repository.Pattern\obj\Debug\InSys.Repository.Pattern.csprojResolveAssemblyReference.cache
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Repository.Pattern\bin\Debug\InSys.Repository.Pattern.dll.config

@@ -1,0 +1,4 @@
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.ViewModel\bin\Debug\InSys.ViewModel.dll
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.ViewModel\bin\Debug\InSys.ViewModel.pdb
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.ViewModel\obj\Debug\InSys.ViewModel.dll
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.ViewModel\obj\Debug\InSys.ViewModel.pdb

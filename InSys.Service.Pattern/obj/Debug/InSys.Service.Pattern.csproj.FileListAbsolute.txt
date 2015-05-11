@@ -1,0 +1,4 @@
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Service.Pattern\bin\Debug\InSys.Service.Pattern.dll
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Service.Pattern\bin\Debug\InSys.Service.Pattern.pdb
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Service.Pattern\obj\Debug\InSys.Service.Pattern.dll
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Service.Pattern\obj\Debug\InSys.Service.Pattern.pdb

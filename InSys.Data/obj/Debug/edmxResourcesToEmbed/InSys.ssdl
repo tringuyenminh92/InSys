@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InSysModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="T_Answer">
+    <Key>
+      <PropertyRef Name="AnswerId" />
+    </Key>
+    <Property Name="AnswerId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="QuestionId" Type="uniqueidentifier" />
+    <Property Name="ContentAnswer" Type="nvarchar(max)" />
+    <Property Name="IsTrue" Type="bit" />
+    <Property Name="IsDelete" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Point" Type="float" />
+    <Property Name="NumberAnswers" Type="int" />
+  </EntityType>
+  <EntityType Name="T_Candidate">
+    <Key>
+      <PropertyRef Name="CandidateId" />
+    </Key>
+    <Property Name="CandidateId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="YearOfExperience" Type="float" />
+    <Property Name="IsDelete" Type="bit" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="LevelCandidateId" Type="int" />
+  </EntityType>
+  <EntityType Name="T_CategoryMaster">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsDelete" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Group" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="T_Exam">
+    <Key>
+      <PropertyRef Name="ExamId" />
+    </Key>
+    <Property Name="ExamId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CategoryId" Type="uniqueidentifier" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="TimeTest" Type="float" />
+    <Property Name="IsDelete" Type="bit" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tags" Type="nvarchar" MaxLength="500" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="NumberQuestions" Type="int" />
+  </EntityType>
+  <EntityType Name="T_ExamCandidate">
+    <Key>
+      <PropertyRef Name="ExamCadidateId" />
+    </Key>
+    <Property Name="ExamCadidateId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ExamId" Type="uniqueidentifier" />
+    <Property Name="CandidateId" Type="uniqueidentifier" />
+    <Property Name="TimeStartExam" Type="datetime" />
+    <Property Name="TimeDo" Type="float" />
+    <Property Name="Point" Type="float" />
+    <Property Name="IsPass" Type="bit" />
+    <Property Name="IsDelete" Type="bit" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="CandidateName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExamCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="T_ExamQuestion">
+    <Key>
+      <PropertyRef Name="ExamQuestionId" />
+    </Key>
+    <Property Name="ExamQuestionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ExamId" Type="uniqueidentifier" />
+    <Property Name="QuestionId" Type="uniqueidentifier" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="T_LevelCandidate">
+    <Key>
+      <PropertyRef Name="LevelCandidateId" />
+    </Key>
+    <Property Name="LevelCandidateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsDelete" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="T_LevelQuestionMaster">
+    <Key>
+      <PropertyRef Name="LevelQuestionId" />
+    </Key>
+    <Property Name="LevelQuestionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="IsDelete" Type="bit" />
+  </EntityType>
+  <EntityType Name="T_PercentQuestion">
+    <Key>
+      <PropertyRef Name="PercentQuestionId" />
+    </Key>
+    <Property Name="PercentQuestionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PercentQuestion" Type="float" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+    <Property Name="LevelCadidateId" Type="int" />
+    <Property Name="LevelQuestionId" Type="int" />
+  </EntityType>
+  <EntityType Name="T_Question">
+    <Key>
+      <PropertyRef Name="QuestionId" />
+    </Key>
+    <Property Name="QuestionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LevelQuestionId" Type="int" />
+    <Property Name="LevelName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Skill" Type="nvarchar" MaxLength="50" />
+    <Property Name="Time" Type="float" />
+    <Property Name="ContentQuestion" Type="nvarchar" MaxLength="300" />
+    <Property Name="ApproveBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Valid" Type="bit" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="50" />
+    <Property Name="AudioPath" Type="nvarchar" MaxLength="50" />
+    <Property Name="VideoPath" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDelete" Type="bit" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Point" Type="float" />
+    <Property Name="Tags" Type="nvarchar" MaxLength="500" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreateByName" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="T_Result">
+    <Key>
+      <PropertyRef Name="ResultId" />
+    </Key>
+    <Property Name="ResultId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ExamCadidateId" Type="uniqueidentifier" />
+    <Property Name="AnswerId" Type="uniqueidentifier" />
+    <Property Name="ContentResult" Type="nvarchar" MaxLength="300" />
+    <Property Name="Point" Type="float" />
+    <Property Name="QuestionPoin" Type="float" />
+    <Property Name="NumberAnswer" Type="int" />
+  </EntityType>
+  <EntityType Name="T_RoleMaster">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="T_UserMaster">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsDelete" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="FristName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Domain" Type="nvarchar(max)" />
+    <Property Name="NTID" Type="nvarchar(max)" />
+    <Property Name="Department" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar(max)" />
+    <Property Name="CreatedBy" Type="nvarchar(max)" />
+    <Property Name="ModifiedBy" Type="nvarchar(max)" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="RoleId" Type="int" />
+  </EntityType>
+  <Association Name="FK_Answer_Question">
+    <End Role="T_Question" Type="Self.T_Question" Multiplicity="0..1" />
+    <End Role="T_Answer" Type="Self.T_Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Question">
+        <PropertyRef Name="QuestionId" />
+      </Principal>
+      <Dependent Role="T_Answer">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExamCandidate_Candidate">
+    <End Role="T_Candidate" Type="Self.T_Candidate" Multiplicity="0..1" />
+    <End Role="T_ExamCandidate" Type="Self.T_ExamCandidate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Candidate">
+        <PropertyRef Name="CandidateId" />
+      </Principal>
+      <Dependent Role="T_ExamCandidate">
+        <PropertyRef Name="CandidateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExamCandidate_Exam">
+    <End Role="T_Exam" Type="Self.T_Exam" Multiplicity="0..1" />
+    <End Role="T_ExamCandidate" Type="Self.T_ExamCandidate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Exam">
+        <PropertyRef Name="ExamId" />
+      </Principal>
+      <Dependent Role="T_ExamCandidate">
+        <PropertyRef Name="ExamId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExamQuestion_Exam">
+    <End Role="T_Exam" Type="Self.T_Exam" Multiplicity="0..1" />
+    <End Role="T_ExamQuestion" Type="Self.T_ExamQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Exam">
+        <PropertyRef Name="ExamId" />
+      </Principal>
+      <Dependent Role="T_ExamQuestion">
+        <PropertyRef Name="ExamId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExamQuestion_Question">
+    <End Role="T_Question" Type="Self.T_Question" Multiplicity="0..1" />
+    <End Role="T_ExamQuestion" Type="Self.T_ExamQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Question">
+        <PropertyRef Name="QuestionId" />
+      </Principal>
+      <Dependent Role="T_ExamQuestion">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Result_Answer">
+    <End Role="T_Answer" Type="Self.T_Answer" Multiplicity="0..1" />
+    <End Role="T_Result" Type="Self.T_Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_Answer">
+        <PropertyRef Name="AnswerId" />
+      </Principal>
+      <Dependent Role="T_Result">
+        <PropertyRef Name="AnswerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Result_ExamCandidate">
+    <End Role="T_ExamCandidate" Type="Self.T_ExamCandidate" Multiplicity="0..1" />
+    <End Role="T_Result" Type="Self.T_Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_ExamCandidate">
+        <PropertyRef Name="ExamCadidateId" />
+      </Principal>
+      <Dependent Role="T_Result">
+        <PropertyRef Name="ExamCadidateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Candidate_T_LevelCandidate">
+    <End Role="T_LevelCandidate" Type="Self.T_LevelCandidate" Multiplicity="0..1" />
+    <End Role="T_Candidate" Type="Self.T_Candidate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_LevelCandidate">
+        <PropertyRef Name="LevelCandidateId" />
+      </Principal>
+      <Dependent Role="T_Candidate">
+        <PropertyRef Name="LevelCandidateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_PercentQuestion_T_LevelCandidate">
+    <End Role="T_LevelCandidate" Type="Self.T_LevelCandidate" Multiplicity="0..1" />
+    <End Role="T_PercentQuestion" Type="Self.T_PercentQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_LevelCandidate">
+        <PropertyRef Name="LevelCandidateId" />
+      </Principal>
+      <Dependent Role="T_PercentQuestion">
+        <PropertyRef Name="LevelCadidateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_PercentQuestion_T_LevelQuestionMaster">
+    <End Role="T_LevelQuestionMaster" Type="Self.T_LevelQuestionMaster" Multiplicity="0..1" />
+    <End Role="T_PercentQuestion" Type="Self.T_PercentQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_LevelQuestionMaster">
+        <PropertyRef Name="LevelQuestionId" />
+      </Principal>
+      <Dependent Role="T_PercentQuestion">
+        <PropertyRef Name="LevelQuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Question_T_CategoryMaster">
+    <End Role="T_CategoryMaster" Type="Self.T_CategoryMaster" Multiplicity="0..1" />
+    <End Role="T_Question" Type="Self.T_Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_CategoryMaster">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="T_Question">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Question_T_LevelQuestionMaster">
+    <End Role="T_LevelQuestionMaster" Type="Self.T_LevelQuestionMaster" Multiplicity="0..1" />
+    <End Role="T_Question" Type="Self.T_Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_LevelQuestionMaster">
+        <PropertyRef Name="LevelQuestionId" />
+      </Principal>
+      <Dependent Role="T_Question">
+        <PropertyRef Name="LevelQuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_Question_T_UserMaster">
+    <End Role="T_UserMaster" Type="Self.T_UserMaster" Multiplicity="0..1" />
+    <End Role="T_Question" Type="Self.T_Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_UserMaster">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="T_Question">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_UserMaster_T_RoleMaster">
+    <End Role="T_RoleMaster" Type="Self.T_RoleMaster" Multiplicity="0..1" />
+    <End Role="T_UserMaster" Type="Self.T_UserMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_RoleMaster">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="T_UserMaster">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_GetQuestions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="InSysModelStoreContainer">
+    <EntitySet Name="T_Answer" EntityType="Self.T_Answer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Candidate" EntityType="Self.T_Candidate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_CategoryMaster" EntityType="Self.T_CategoryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Exam" EntityType="Self.T_Exam" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_ExamCandidate" EntityType="Self.T_ExamCandidate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_ExamQuestion" EntityType="Self.T_ExamQuestion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_LevelCandidate" EntityType="Self.T_LevelCandidate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_LevelQuestionMaster" EntityType="Self.T_LevelQuestionMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_PercentQuestion" EntityType="Self.T_PercentQuestion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Question" EntityType="Self.T_Question" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_Result" EntityType="Self.T_Result" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_RoleMaster" EntityType="Self.T_RoleMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_UserMaster" EntityType="Self.T_UserMaster" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Answer_Question" Association="Self.FK_Answer_Question">
+      <End Role="T_Question" EntitySet="T_Question" />
+      <End Role="T_Answer" EntitySet="T_Answer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExamCandidate_Candidate" Association="Self.FK_ExamCandidate_Candidate">
+      <End Role="T_Candidate" EntitySet="T_Candidate" />
+      <End Role="T_ExamCandidate" EntitySet="T_ExamCandidate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExamCandidate_Exam" Association="Self.FK_ExamCandidate_Exam">
+      <End Role="T_Exam" EntitySet="T_Exam" />
+      <End Role="T_ExamCandidate" EntitySet="T_ExamCandidate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExamQuestion_Exam" Association="Self.FK_ExamQuestion_Exam">
+      <End Role="T_Exam" EntitySet="T_Exam" />
+      <End Role="T_ExamQuestion" EntitySet="T_ExamQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExamQuestion_Question" Association="Self.FK_ExamQuestion_Question">
+      <End Role="T_Question" EntitySet="T_Question" />
+      <End Role="T_ExamQuestion" EntitySet="T_ExamQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Result_Answer" Association="Self.FK_Result_Answer">
+      <End Role="T_Answer" EntitySet="T_Answer" />
+      <End Role="T_Result" EntitySet="T_Result" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Result_ExamCandidate" Association="Self.FK_Result_ExamCandidate">
+      <End Role="T_ExamCandidate" EntitySet="T_ExamCandidate" />
+      <End Role="T_Result" EntitySet="T_Result" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Candidate_T_LevelCandidate" Association="Self.FK_T_Candidate_T_LevelCandidate">
+      <End Role="T_LevelCandidate" EntitySet="T_LevelCandidate" />
+      <End Role="T_Candidate" EntitySet="T_Candidate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_PercentQuestion_T_LevelCandidate" Association="Self.FK_T_PercentQuestion_T_LevelCandidate">
+      <End Role="T_LevelCandidate" EntitySet="T_LevelCandidate" />
+      <End Role="T_PercentQuestion" EntitySet="T_PercentQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_PercentQuestion_T_LevelQuestionMaster" Association="Self.FK_T_PercentQuestion_T_LevelQuestionMaster">
+      <End Role="T_LevelQuestionMaster" EntitySet="T_LevelQuestionMaster" />
+      <End Role="T_PercentQuestion" EntitySet="T_PercentQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Question_T_CategoryMaster" Association="Self.FK_T_Question_T_CategoryMaster">
+      <End Role="T_CategoryMaster" EntitySet="T_CategoryMaster" />
+      <End Role="T_Question" EntitySet="T_Question" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Question_T_LevelQuestionMaster" Association="Self.FK_T_Question_T_LevelQuestionMaster">
+      <End Role="T_LevelQuestionMaster" EntitySet="T_LevelQuestionMaster" />
+      <End Role="T_Question" EntitySet="T_Question" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_Question_T_UserMaster" Association="Self.FK_T_Question_T_UserMaster">
+      <End Role="T_UserMaster" EntitySet="T_UserMaster" />
+      <End Role="T_Question" EntitySet="T_Question" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_UserMaster_T_RoleMaster" Association="Self.FK_T_UserMaster_T_RoleMaster">
+      <End Role="T_RoleMaster" EntitySet="T_RoleMaster" />
+      <End Role="T_UserMaster" EntitySet="T_UserMaster" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
