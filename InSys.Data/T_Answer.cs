@@ -12,7 +12,8 @@ namespace InSys.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class T_Answer
+    using InSys.Repository.Pattern.Ef6;
+    public partial class T_Answer : Entity
     {
         public T_Answer()
         {
@@ -32,4 +33,5 @@ namespace InSys.Data
         public virtual T_Question T_Question { get; set; }
         public virtual ICollection<T_Result> T_Result { get; set; }
     }
+
 }

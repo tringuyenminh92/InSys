@@ -14,8 +14,9 @@ namespace InSys.Data
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Core.Objects;
     using System.Linq;
-
-    public partial class InSysEntities : DbContext
+    using InSys.Repository.Pattern.Ef6;
+    
+    public partial class InSysEntities : DataContext
     {
         public InSysEntities()
             : base("name=InSysEntities")

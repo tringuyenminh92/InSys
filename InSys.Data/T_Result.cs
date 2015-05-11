@@ -12,7 +12,8 @@ namespace InSys.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class T_Result
+    using InSys.Repository.Pattern.Ef6;
+    public partial class T_Result : Entity
     {
         public System.Guid ResultId { get; set; }
         public Nullable<System.Guid> ExamCadidateId { get; set; }
@@ -25,4 +26,5 @@ namespace InSys.Data
         public virtual T_Answer T_Answer { get; set; }
         public virtual T_ExamCandidate T_ExamCandidate { get; set; }
     }
+
 }

@@ -12,7 +12,8 @@ namespace InSys.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class T_LevelCandidate
+    using InSys.Repository.Pattern.Ef6;
+    public partial class T_LevelCandidate : Entity
     {
         public T_LevelCandidate()
         {
@@ -30,4 +31,5 @@ namespace InSys.Data
         public virtual ICollection<T_Candidate> T_Candidate { get; set; }
         public virtual ICollection<T_PercentQuestion> T_PercentQuestion { get; set; }
     }
+
 }

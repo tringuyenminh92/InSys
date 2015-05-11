@@ -17,8 +17,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InSys.Repository.Pattern", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InSys.Repository.Pattern.Ef6", "InSys.Repository.Pattern.Ef6\InSys.Repository.Pattern.Ef6.csproj", "{17965C4B-7716-44BE-8A49-8B455057F0D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InSys.Service.Pattern", "InSys.Service.Pattern\InSys.Service.Pattern.csproj", "{5D185B7D-A175-4811-B97F-A70F71531323}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{1A03B92C-9921-42E2-8AC5-5A9459A16030}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
@@ -76,12 +74,6 @@ Global
 		{17965C4B-7716-44BE-8A49-8B455057F0D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17965C4B-7716-44BE-8A49-8B455057F0D6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{17965C4B-7716-44BE-8A49-8B455057F0D6}.Release|x86.ActiveCfg = Release|Any CPU
-		{5D185B7D-A175-4811-B97F-A70F71531323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5D185B7D-A175-4811-B97F-A70F71531323}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5D185B7D-A175-4811-B97F-A70F71531323}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5D185B7D-A175-4811-B97F-A70F71531323}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5D185B7D-A175-4811-B97F-A70F71531323}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5D185B7D-A175-4811-B97F-A70F71531323}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

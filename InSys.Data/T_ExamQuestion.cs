@@ -12,7 +12,8 @@ namespace InSys.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class T_ExamQuestion
+    using InSys.Repository.Pattern.Ef6;
+    public partial class T_ExamQuestion : Entity
     {
         public System.Guid ExamQuestionId { get; set; }
         public Nullable<System.Guid> ExamId { get; set; }
@@ -22,4 +23,5 @@ namespace InSys.Data
         public virtual T_Exam T_Exam { get; set; }
         public virtual T_Question T_Question { get; set; }
     }
+
 }

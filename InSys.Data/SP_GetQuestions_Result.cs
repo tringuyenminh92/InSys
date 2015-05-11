@@ -9,9 +9,10 @@
 
 namespace InSys.Data
 {
+    using InSys.Repository.Pattern.Ef6;
     using System;
     
-    public partial class SP_GetQuestions_Result 
+    public partial class SP_GetQuestions_Result : Entity
     {
         public System.Guid QuestionId { get; set; }
         public Nullable<int> LevelQuestionId { get; set; }
@@ -35,4 +36,5 @@ namespace InSys.Data
         public Nullable<int> CreatedBy { get; set; }
         public string CreateByName { get; set; }
     }
+
 }

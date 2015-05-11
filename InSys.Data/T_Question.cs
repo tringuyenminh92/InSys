@@ -12,7 +12,8 @@ namespace InSys.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class T_Question
+    using InSys.Repository.Pattern.Ef6;
+    public partial class T_Question : Entity
     {
         public T_Question()
         {
@@ -48,4 +49,5 @@ namespace InSys.Data
         public virtual T_LevelQuestionMaster T_LevelQuestionMaster { get; set; }
         public virtual T_UserMaster T_UserMaster { get; set; }
     }
+
 }

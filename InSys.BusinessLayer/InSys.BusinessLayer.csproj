@@ -45,10 +45,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IQuestionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InSys.Data\InSys.Data.csproj">
+      <Project>{e1e34f55-050d-4c75-94d0-9a853d051e47}</Project>
+      <Name>InSys.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InSys.Repository.Pattern.Ef6\InSys.Repository.Pattern.Ef6.csproj">
+      <Project>{17965C4B-7716-44BE-8A49-8B455057F0D6}</Project>
+      <Name>InSys.Repository.Pattern.Ef6</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InSys.Repository.Pattern\InSys.Repository.Pattern.csproj">
+      <Project>{8c948bee-854c-481b-ac5a-c89a919a6d75}</Project>
+      <Name>InSys.Repository.Pattern</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

@@ -12,7 +12,8 @@ namespace InSys.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class T_Exam
+    using InSys.Repository.Pattern.Ef6;
+    public partial class T_Exam : Entity
     {
         public T_Exam()
         {
@@ -33,4 +34,5 @@ namespace InSys.Data
         public virtual ICollection<T_ExamCandidate> T_ExamCandidate { get; set; }
         public virtual ICollection<T_ExamQuestion> T_ExamQuestion { get; set; }
     }
+
 }

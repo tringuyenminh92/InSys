@@ -12,7 +12,8 @@ namespace InSys.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class T_CategoryMaster
+    using InSys.Repository.Pattern.Ef6;
+    public partial class T_CategoryMaster : Entity
     {
         public T_CategoryMaster()
         {
@@ -29,4 +30,5 @@ namespace InSys.Data
     
         public virtual ICollection<T_Question> T_Question { get; set; }
     }
+
 }

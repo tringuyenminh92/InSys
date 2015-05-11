@@ -8,3 +8,11 @@ C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Data\bin\Debug\E
 C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Data\obj\Debug\InSys.Data.dll
 C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Data\obj\Debug\InSys.Data.pdb
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Data\bin\Debug\InSys.Repository.Pattern.dll
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Data\bin\Debug\InSys.Repository.Pattern.Ef6.dll
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Data\bin\Debug\LinqKit.dll
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Data\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Data\bin\Debug\InSys.Repository.Pattern.Ef6.pdb
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Data\bin\Debug\InSys.Repository.Pattern.pdb
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Data\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.Data\bin\Debug\Microsoft.Practices.ServiceLocation.xml

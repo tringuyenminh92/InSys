@@ -12,7 +12,8 @@ namespace InSys.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class T_Candidate
+    using InSys.Repository.Pattern.Ef6;
+    public partial class T_Candidate : Entity
     {
         public T_Candidate()
         {
@@ -31,4 +32,5 @@ namespace InSys.Data
         public virtual ICollection<T_ExamCandidate> T_ExamCandidate { get; set; }
         public virtual T_LevelCandidate T_LevelCandidate { get; set; }
     }
+
 }

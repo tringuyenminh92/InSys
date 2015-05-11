@@ -12,7 +12,8 @@ namespace InSys.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class T_PercentQuestion
+    using InSys.Repository.Pattern.Ef6;
+    public partial class T_PercentQuestion : Entity
     {
         public int PercentQuestionId { get; set; }
         public double PercentQuestion { get; set; }
@@ -24,4 +25,5 @@ namespace InSys.Data
         public virtual T_LevelCandidate T_LevelCandidate { get; set; }
         public virtual T_LevelQuestionMaster T_LevelQuestionMaster { get; set; }
     }
+
 }

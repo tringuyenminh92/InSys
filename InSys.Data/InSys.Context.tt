@@ -49,11 +49,12 @@ if (container.FunctionImports.Any())
 #>
 using System.Data.Entity.Core.Objects;
 using System.Linq;
+using InSys.Repository.Pattern.Ef6;
 <#
 }
 #>
 
-<#=Accessibility.ForType(container)#> partial class <#=code.Escape(container)#> : DbContext,DataContext
+<#=Accessibility.ForType(container)#> partial class <#=code.Escape(container)#> : DataContext
 {
     public <#=code.Escape(container)#>()
         : base("name=<#=container.Name#>")

@@ -111,6 +111,7 @@ foreach (var complex in typeMapper.GetItemsToGenerate<ComplexType>(itemCollectio
     fileManager.StartNewFile(complex.Name + ".cs");
     BeginNamespace(code);
 #>
+using InSys.Repository.Pattern.Ef6;
 <#=codeStringGenerator.UsingDirectives(inHeader: false, includeCollections: false)#>
 <#=Accessibility.ForType(complex)#> partial class <#=code.Escape(complex)#> : Entity
 {
@@ -250,6 +251,7 @@ public void EndNamespace(CodeGenerationTools code)
     {
         PopIndent();
 #>
+
 }
 <#+
     }
@@ -308,7 +310,7 @@ public class CodeStringGenerator
     {
         return string.Format(
             CultureInfo.InvariantCulture,
-            "{0} {1}partial class {2}{3}",
+            "{0} {1}partial class {2}{3} : Entity" ,
             Accessibility.ForType(entity),
             _code.SpaceAfter(_code.AbstractOption(entity)),
             _code.Escape(entity),
@@ -419,10 +421,11 @@ public class CodeStringGenerator
             ? string.Format(
                 CultureInfo.InvariantCulture,
                 "{0}using System;{1}" +
-                "{2}",
+                "{2}{3}",
                 inHeader ? Environment.NewLine : "",
                 includeCollections ? (Environment.NewLine + "using System.Collections.Generic;") : "",
-                inHeader ? "" : Environment.NewLine)
+                inHeader ? "" : Environment.NewLine,
+				 includeCollections ? (Environment.NewLine + "using InSys.Repository.Pattern.Ef6;") : "")
             : "";
     }
 }

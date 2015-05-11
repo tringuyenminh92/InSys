@@ -12,7 +12,8 @@ namespace InSys.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class T_RoleMaster
+    using InSys.Repository.Pattern.Ef6;
+    public partial class T_RoleMaster : Entity
     {
         public T_RoleMaster()
         {
@@ -24,4 +25,5 @@ namespace InSys.Data
     
         public virtual ICollection<T_UserMaster> T_UserMaster { get; set; }
     }
+
 }
