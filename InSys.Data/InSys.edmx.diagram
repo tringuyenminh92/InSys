@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="28ab639a0d324174a923824b7be40bd8" Name="Diagram1">
+        <EntityTypeShape EntityType="InSysModel.T_Answer" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InSysModel.T_Candidate" Width="1.5" PointX="6" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="InSysModel.T_CategoryMaster" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="InSysModel.T_Exam" Width="1.5" PointX="6" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InSysModel.T_ExamCandidate" Width="1.5" PointX="8.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="InSysModel.T_ExamQuestion" Width="1.5" PointX="8.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="InSysModel.T_LevelCandidate" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InSysModel.T_LevelQuestionMaster" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InSysModel.T_PercentQuestion" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InSysModel.T_Question" Width="1.5" PointX="6" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="InSysModel.T_Result" Width="1.5" PointX="10.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="InSysModel.T_RoleMaster" Width="1.5" PointX="1.5" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InSysModel.T_UserMaster" Width="1.5" PointX="3.75" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="InSysModel.FK_Answer_Question" ManuallyRouted="false" />
+        <AssociationConnector Association="InSysModel.FK_Result_Answer" ManuallyRouted="false" />
+        <AssociationConnector Association="InSysModel.FK_ExamCandidate_Candidate" ManuallyRouted="false" />
+        <AssociationConnector Association="InSysModel.FK_T_Candidate_T_LevelCandidate" ManuallyRouted="false" />
+        <AssociationConnector Association="InSysModel.FK_T_Question_T_CategoryMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="InSysModel.FK_ExamCandidate_Exam" ManuallyRouted="false" />
+        <AssociationConnector Association="InSysModel.FK_ExamQuestion_Exam" ManuallyRouted="false" />
+        <AssociationConnector Association="InSysModel.FK_Result_ExamCandidate" ManuallyRouted="false" />
+        <AssociationConnector Association="InSysModel.FK_ExamQuestion_Question" ManuallyRouted="false" />
+        <AssociationConnector Association="InSysModel.FK_T_PercentQuestion_T_LevelCandidate" ManuallyRouted="false" />
+        <AssociationConnector Association="InSysModel.FK_T_PercentQuestion_T_LevelQuestionMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="InSysModel.FK_T_Question_T_LevelQuestionMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="InSysModel.FK_T_Question_T_UserMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="InSysModel.FK_T_UserMaster_T_RoleMaster" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

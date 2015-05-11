@@ -4,13 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C3599C7D-467C-46FF-B41B-AE7FE67FFAC9}</ProjectGuid>
+    <ProjectGuid>{E1E34F55-050D-4C75-94D0-9A853D051E47}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>InSys.Data</RootNamespace>
     <AssemblyName>InSys.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,8 +32,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,9 +52,99 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InSys.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InSys.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InSys.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InSys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InSys.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SP_GetQuestions_Result.cs">
+      <DependentUpon>InSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Answer.cs">
+      <DependentUpon>InSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Candidate.cs">
+      <DependentUpon>InSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_CategoryMaster.cs">
+      <DependentUpon>InSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Exam.cs">
+      <DependentUpon>InSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ExamCandidate.cs">
+      <DependentUpon>InSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_ExamQuestion.cs">
+      <DependentUpon>InSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LevelCandidate.cs">
+      <DependentUpon>InSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_LevelQuestionMaster.cs">
+      <DependentUpon>InSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_PercentQuestion.cs">
+      <DependentUpon>InSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Question.cs">
+      <DependentUpon>InSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_Result.cs">
+      <DependentUpon>InSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_RoleMaster.cs">
+      <DependentUpon>InSys.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_UserMaster.cs">
+      <DependentUpon>InSys.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="InSys.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>InSys.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="InSys.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>InSys.edmx</DependentUpon>
+      <LastGenOutput>InSys.Context.cs</LastGenOutput>
+    </None>
+    <None Include="InSys.edmx.diagram">
+      <DependentUpon>InSys.edmx</DependentUpon>
+    </None>
+    <None Include="InSys.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>InSys.edmx</DependentUpon>
+      <LastGenOutput>InSys.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
