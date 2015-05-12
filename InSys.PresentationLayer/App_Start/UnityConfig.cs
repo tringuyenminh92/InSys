@@ -1,6 +1,11 @@
 using System;
+using InSys.BusinessLayer;
+using InSys.Data;
+using InSys.Repository.Pattern.DataContext;
+using InSys.Repository.Pattern.Ef6;
+using InSys.Repository.Pattern.Repositories;
+using InSys.Repository.Pattern.UnitOfWork;
 using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
 
 namespace InSys.PresentationLayer.App_Start
 {
@@ -37,6 +42,13 @@ namespace InSys.PresentationLayer.App_Start
 
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
+            container
+                .RegisterType<IDataContextAsync, InSysEntities>(new PerRequestLifetimeManager())
+                .RegisterType<IDataContext, InSysEntities>(new PerRequestLifetimeManager())
+                .RegisterType<IUnitOfWork, UnitOfWork>(new PerRequestLifetimeManager())
+                .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
+                .RegisterType<IRepositoryAsync<T_Question>, Repository<T_Question>>()
+                .RegisterType<IQuestionService, QuestionService>();
         }
     }
 }

@@ -2,7 +2,7 @@
 //
 //	Created By: Nguyen Minh Tri
 //	Created Date: 09-05-2015
-//	Description: Add comment header,
+//	Description: Add comment header, base controller for common operators
 //
 //	Modified By: Nguyen Minh Tri
 //	Modified Date: 09-05-2015

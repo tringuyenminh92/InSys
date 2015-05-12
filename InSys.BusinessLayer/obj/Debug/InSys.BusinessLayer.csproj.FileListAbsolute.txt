@@ -17,3 +17,10 @@ C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.BusinessLayer\bi
 C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.BusinessLayer\bin\Debug\EntityFramework.xml
 C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.BusinessLayer\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.BusinessLayer\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.BusinessLayer\bin\Debug\AutoMapper.Net4.dll
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.BusinessLayer\bin\Debug\AutoMapper.dll
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.BusinessLayer\bin\Debug\InSys.ViewModel.dll
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.BusinessLayer\bin\Debug\InSys.ViewModel.pdb
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.BusinessLayer\bin\Debug\AutoMapper.pdb
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.BusinessLayer\bin\Debug\AutoMapper.xml
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.BusinessLayer\bin\Debug\AutoMapper.Net4.pdb

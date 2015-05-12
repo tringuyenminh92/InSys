@@ -41,6 +41,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
       <Private>True</Private>
@@ -68,7 +76,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -86,9 +93,6 @@
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -216,6 +220,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -339,18 +344,8 @@
     <Content Include="Scripts\Angular\ui-grid-unstable.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\Custom\angular.min.js" />
-    <Content Include="Scripts\Custom\DonhangController.js" />
-    <Content Include="Scripts\Custom\DSHanghoaController.js" />
-    <Content Include="Scripts\Custom\HanghoaController.js" />
-    <Content Include="Scripts\Custom\HomeControler.js" />
-    <Content Include="Scripts\Custom\LoginController.js" />
-    <Content Include="Scripts\Custom\MuaHangController.js" />
     <Content Include="Scripts\Custom\MyApp.js" />
-    <Content Include="Scripts\Custom\QuanlyHanghoaController.js" />
-    <Content Include="Scripts\Custom\QuoteController.js" />
-    <Content Include="Scripts\Custom\TaikhoanController.js" />
-    <Content Include="Scripts\Custom\UserController.js" />
+    <Content Include="Scripts\Custom\QuestionController.js" />
     <Content Include="Scripts\FileAPI.flash.swf" />
     <Content Include="Scripts\FileAPI.js" />
     <Content Include="Scripts\FileAPI.min.js" />
@@ -427,12 +422,39 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Question\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InSys.BusinessLayer\InSys.BusinessLayer.csproj">
+      <Project>{40c24997-bc57-4a7d-8db0-77cba3cfb217}</Project>
+      <Name>InSys.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InSys.Data\InSys.Data.csproj">
+      <Project>{e1e34f55-050d-4c75-94d0-9a853d051e47}</Project>
+      <Name>InSys.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InSys.Helper\InSys.Helper.csproj">
+      <Project>{8ab2a9e1-cbce-4e42-85fa-30605232e22e}</Project>
+      <Name>InSys.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InSys.Repository.Pattern.Ef6\InSys.Repository.Pattern.Ef6.csproj">
+      <Project>{17965C4B-7716-44BE-8A49-8B455057F0D6}</Project>
+      <Name>InSys.Repository.Pattern.Ef6</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InSys.Repository.Pattern\InSys.Repository.Pattern.csproj">
+      <Project>{8c948bee-854c-481b-ac5a-c89a919a6d75}</Project>
+      <Name>InSys.Repository.Pattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InSys.ViewModel\InSys.ViewModel.csproj">
+      <Project>{a01097fc-e4f0-45ec-8321-de8263513780}</Project>
+      <Name>InSys.ViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

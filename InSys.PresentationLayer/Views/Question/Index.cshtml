@@ -1,0 +1,205 @@
+﻿@*/*************************************************************
+*
+*	Created By: Nguyen Minh Tri - UR81HC
+*  Created Date: 08-04-2015
+*	Description: Interface for Questionaries.
+*	
+*	Modified By: Nguyen Minh Tri - UR81HC
+*	Modified Date: 14-04-2015
+*	Description: add ngtags, answers interface
+*
+*	Modified By: Nguyen Minh Tri - UR81HC
+*	Modified Date: 20-04-2015
+*	Description:  answers interface
+*
+*	Modified By: Nguyen Minh Tri - UR81HC
+*	Modified Date: 21-04-2015
+*	Description:  answers interface cont.
+*
+*	Modified By: Nguyen Minh Tri - UR81HC
+*	Modified Date: 4-05-2015
+*	Description:  update details to modal.
+*
+*************************************************************/*@
+@{
+    ViewBag.Title = "Questions Page";
+}
+
+<script src="~/Scripts/CustomScript/QuestionController.js"></script>
+
+@* Template for ngTags *@
+<script type="text/ng-template" id="CustomTemplateWithIcon">
+    <div class="tag-template">
+        <div>
+            <span><i class="fa fa-tags"></i> {{$getDisplayText()}}<a class="fa fa-times" ng-click="$removeTag()"></a></span>
+        </div>
+    </div>
+</script>
+
+@* Template for adding answer single choice *@
+<script type="text/ng-template" id="SINGLE_CHOICE">
+    <div ng-repeat="ans in Answers">
+                <div class="input-group col-md-11 col-sm-offset-1">
+
+                    <div class="fac fac-checkbox-o fac-primary ">
+                        <span></span>
+                        <div class="radio radio-primary">
+                            <input id="radio{{ans.Order}}" type="radio" ng-model="ans.IsAnswer" name="IsAnswerName">
+                            <label for="radio{{ans.Order}}"> <i class="label label-info">Is True Answer</i></label>
+                        </div>
+                    </div>
+                    <div class="row">   
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" placeholder="Answer's Content" ng-model="ans.AnswerContent" />
+                        </div>
+                        <div class="col-md-3 pull-left">
+                            <button type="button" class="btn btn-primary" ng-show="ans.Add" ng-click="AddInputAnswer(ans.Order)"><i class="fa fa-plus"></i></button>
+                            <button type="button" class="btn btn-danger" ng-show="ans.Remove" ng-click="RemoveInputAnswer(ans.Order)"><i class="fa fa-minus"></i></button>
+                        </div>
+                    </div>
+                </div>
+      </div>
+</script>
+
+<script type="text/ng-template" id="MULTI_CHOICE">
+  <div>Implementing Multiple Choice View</div>
+</script>
+
+<script type="text/ng-template" id="YES_NO_CHOICE">
+   <div>Implementing Yes no Choice View</div>
+</script>
+
+<script type="text/ng-template" id="AUDIO_CHOICE">
+   <div>Implementing Audio Choice View</div>
+</script>
+
+<div class="row" ng-controller="questionController">
+    @*<button type="button" class="btn btn-primary" ng-click="ShowGridModal()">Show</button>*@
+    <div class="col-sm-offset-1 col-md-4">
+        <tags-input ng-class="col-md-5" ng-model="SearchInput" min-length="2" replace-spaces-with-dashes="false" placeholder="Search options" template="CustomTemplateWithIcon"></tags-input>
+    </div>
+    @* Question Grid Area *@
+    <div class="col-sm-offset-1 col-md-10 row" ng-init="loadData()">
+        <br />
+        <div>
+            <div class="gridStyle" external-scopes="$scope" ui-grid-pagination ui-grid-resize-columns ui-grid="gridOptions"></div>
+        </div>
+        <br />
+        <br />
+    </div>
+    @* End *@
+
+
+    <div class="col-sm-offset-1 ">
+
+     
+        @* Grid Modal Template Definition  *@
+        <script type="text/ng-template" id="gridModal.html">
+
+        <div class="modal-header bg-primary">
+            <div class="modal-title" >{{data.Title}}</div>
+        </div>
+        <div class="modal-body">
+            @*{{data.Content}}*@
+            <div external-scopes="$scope" ui-grid-pagination  ui-grid-resize-columns ui-grid="gridOptions"></div>
+        </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" ng-click="cancel()" ng-show="data.CancelButton">{{data.CancelButton}}</button>
+                <button class="btn btn-primary" ng-click="ok()" ng-show="data.OkButton">{{data.OkButton}}</button>
+            </div>
+
+        </script>
+
+
+        @* Question Details Template Definition *@
+        <script type="text/ng-template" id="questionDetails.html">
+
+            @* Question Detils Panel in Left *@
+            <div class="col-sm-6">
+
+                <div class=" panel panel-primary panelDetailStyle">
+                    <div class="panel-heading">Question's Details</div>
+                    <div class="panel-body">
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h5 class="label label-info">Type</h5>
+                                <select class="form-control" ng-options="obj.TypeId as obj.Name for obj in TypesData" ng-model="CurrentQuestionModel.Type">
+                                    <option value="">--Select options--</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4">
+                                <h5 class="label label-info">Category</h5>
+                                <select class="form-control" ng-options="cat.CategoryId as cat.Name for cat in CategoriesData" ng-model="CurrentQuestionModel.CategoryId">
+                                    <option value="">--Select options--</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4">
+                                <h5 class="label label-info">Level</h5>
+                                <select class="form-control" ng-options="level.LevelQuestionId as level.Name for level in LevelsData" ng-model="CurrentQuestionModel.LevelQuestionId">
+                                    <option value="">--Select options--</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <br />
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h5 class="label label-info">Code</h5>
+                                <input type="text" class="form-control" placeholder="Question Code" ng-model="CurrentQuestionModel.Code" />
+                                <br />
+                                <h5 class="label label-info">Approver</h5>
+                                <select class="form-control"></select>
+                                <br />
+                                <h5 class="label label-info">Created Date</h5>
+                                <p class="input-group col-sm-12" style="margin-bottom: 0">
+                                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="CurrentQuestionModel.CreatedDateString" is-open="opened" datepicker-options="dateOptions" close-text="Close" ng-disabled="true" />
+                                </p>
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="label label-info">Content</h5>
+                                <textarea rows="8" style="resize: none" class="form-control" placeholder="Question Content" ng-model="CurrentQuestionModel.ContentQuestion"></textarea>
+                            </div>
+                        </div>
+                        <br />
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h5 class="label label-info">Tags</h5>
+                                <tags-input ng-model="CurrentQuestionModel.TagArray" min-length="2" max-tab="6" replace-spaces-with-dashes="false" placeholder="Enter options" template="CustomTemplateWithIcon">
+                                    @*<auto-complete source=""></auto-complete>*@
+                                    @*loadTags($query)*@
+                                </tags-input>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <button id="CreateQuestion" type="button" class="btn btn-primary pull-left" ng-click="CreateQuestion()" @*ng-show="!IsShowButtonForEdit"*@>Create</button>
+                            </div>
+                            @*<div class="col-md-8">
+                                <button id="SaveEdit" type="button" class="btn btn-primary pull-right" ng-click="SaveEdit()" ng-show="IsShowButtonForEdit">Save</button>
+                                <button id="CancelEdit" type="button" class="btn btn-default pull-right" ng-click="CancelEdit()" ng-show="IsShowButtonForEdit">Cancel</button>
+                            </div>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @* Question Answers Panel in Right *@
+            <div class="col-sm-5">
+                <div class="panel panel-primary panelAnswerStyle">
+                    <div class="panel-heading">Question's Answers</div>
+                    <div class="panel-body">
+                        @* Include view from template to this position *@
+                        <div ng-include src="CurrentQuestionModel.Type"></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </script>
+
+    </div>
+</div>

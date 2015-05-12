@@ -2,66 +2,75 @@
 <html lang="en" ng-app="GlobalModule">
 <head>
     <meta charset="utf-8" />
-    <title>@ViewBag.Title - B2B System</title>
-    <link href="@Url.Content("~/favicon.ico")" rel="shortcut icon" type="image/x-icon" />
+    <title>@ViewBag.Title - Interview System</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+
+    @* Render js,css Libraries*@
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/Angular")
+    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/Custom")
     @RenderSection("scripts", required: false)
+
 </head>
 <body>
-    <nav class="container">
-        <div class="navbar-brand"><strong>Interview System</strong></div>
-        <div class="pull-right">
-            <img src="~/Images/bosch_logo_english.png " class="img-responsive " border="0" title="Bosch - Invented for life" alt="Bosch - Invented for life" style="width:128px; height:63px;" />
-        </div>
-    </nav>
-    <nav class="nav navbar-inverse">
+    <div class="navbar navbar-default navbar-static-top">
         <div class="container">
-            <div class="pull-left">
+            <div class="navbar-header">
+                <a class="navbar-brand fa-2x fa fa-home" href="@Url.Action("Index","Home")"></a>
+            </div>
+            <div class="navbar-collapse fa-1x">
                 <ul class="nav navbar-nav">
-                    <li class="active">@Html.ActionLink("Online Test", "", "", null, new { @class = "fa fa-home" })</li>
+                    <li class="">@Html.ActionLink(" Online Test", "Index", "Home", new { @class = "fa fa-clock-o" })</li>
+                    <li class="dropdown"><a class="fa fa-question check dropdown-toggle" data-toggle="dropdown" href="#"> Question<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index","Question")">Create Question</a></li>                            
+                            <li><a href="#">Excel Import</a></li>
+                            <li><a href="#">Generate Exam</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown"><a class="fa fa-cog check dropdown-toggle" data-toggle="dropdown" href="#"> Admin<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index","User")">Manage Users </a></li>                          
+                            <li><a href="#">Manage Candidates </a></li>
+                            <li><a href="#">Exams</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="glyphicon glyphicon-user">@User.Identity.Name</a></li>
+                    <li>
+                        <img class="" class="img-responsive" src="~/Images/bosch_logo_english.png">
+                    </li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </div>
     <div class="container-fluid">
-        <section class="content-wrapper main-content clear-fix">
-            @RenderBody()
-        </section>
+        @RenderBody()
     </div>
 
-    <link rel="appPathValue" id="appPath" href="@Url.Content("~/")" />
-    @* Modal Message Template Definition  *@
+    @* Modal Template Definition  *@
     <script type="text/ng-template" id="messageModal.html">
-        <div class="modal-header bg-primary">
-            <div class="modal-title">{{data.Title}}</div>
-        </div>
-        <div class="modal-body">
-            {{data.Content}}
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-default" ng-click="cancel()" ng-show="data.CancelButton">{{data.CancelButton}}</button>
-            <button class="btn btn-primary" ng-click="ok()" ng-show="data.OkButton">{{data.OkButton}}</button>
-        </div>
+    
+            <div class="modal-header" >
+                <h4 class="modal-title">{{data.Title}}</h4>
+            </div>
+            <div class="modal-body">
+                {{data.Content}}
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" ng-click="cancel()" ng-show="data.ButtonCancel">{{data.ButtonCancel}}</button>
+                <button class="btn btn-primary" ng-click="ok()" ng-show="data.ButtonOk">{{data.ButtonOk}}</button>
+            </div>
+        
     </script>
-
-    @* Grid Modal Template Definition  *@
-    <script type="text/ng-template" id="gridModal.html">
-        <div class="modal-header bg-primary">
-            <div class="modal-title">{{data.Title}}</div>
-        </div>
-        <div class="modal-body">
-            @*{{data.Content}}*@
-            <div external-scopes="$scope" ui-grid-pagination ui-grid-edit ui-grid-resize-columns ui-grid="gridOptions"></div>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-default" ng-click="cancel()" ng-show="data.CancelButton">{{data.CancelButton}}</button>
-            <button class="btn btn-primary" ng-click="ok()" ng-show="data.OkButton">{{data.OkButton}}</button>
-        </div>
-    </script>
+    <link id="appPath" href="@Url.Content("~/")" hidden rel="linkroot" />
 </body>
 </html>
