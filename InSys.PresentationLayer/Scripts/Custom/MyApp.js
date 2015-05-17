@@ -18,7 +18,9 @@
                                     'ui.grid.selection', 'ui.grid.moveColumns', 'ui.grid.saveState', 'ui.bootstrap', 'ngTagsInput', 'ngSanitize', 'ui.select']);
 
     angular.module("GlobalModule").run(rootModal);
-    angular.module("GlobalModule").factory("modalService", ModalService);
+    angular.module("GlobalModule").factory('modalService', ModalService);
+    angular.module("GlobalModule").factory('notifyService', ModalService);
+    angular.module("GlobalModule").factory('shareService', ModalService);
 
 })();
 
@@ -26,7 +28,7 @@
 rootModal.$inject = ['$rootScope', '$modal'];
 function rootModal($rootScope, $modal) {
 
-    $rootScope.AppPath = $("#appPath").attr("href");
+    $rootScope.AppPath = $('#appPath').attr('href');
     $rootScope.ShowModal = function (funcOk, funcCancel, passData) {
 
         var modalInstance = $modal.open({
@@ -45,7 +47,7 @@ function rootModal($rootScope, $modal) {
 }
 
 // Controller xu ly cac thao tac cua message Modal
-angular.module("GlobalModule").controller("messageModalController", MessageModalController);
+angular.module("GlobalModule").controller('messageModalController', MessageModalController);
 MessageModalController.$inject = ['$scope', '$modalInstance', 'passData'];
 function MessageModalController($scope, $modalInstance, passData) {
 
@@ -68,7 +70,7 @@ function MessageModalController($scope, $modalInstance, passData) {
 //Wait-Dialog class to show Processing message in modal
 function WaitDialog(modalContent) {
 
-    modalContent = modalContent || "Processing...";
+    modalContent = modalContent || 'Processing...';
     var pleaseWaitDiv = $('<div class="modal fade" id="pleaseWaitDialog" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="basicModal" aria-hidden="true" tabindex="-1"><div class="modal-dialog modal-sm"><div class="modal-content"><div class="modal-header"><h4>' + modalContent + '</h4></div><div class="modal-body"><div class="progress progress-striped active"><div class="progress-bar" style="width: 90%;"/></div></div></div></div></div>');
 
     this.Show = function () {
@@ -116,10 +118,9 @@ function ModalService($modal) {
 
 //Service to show notification message
 notifyService.$inject = ['$rootScope'];
-
-//Service to show notification message
-notifyService.$inject = ['$rootScope'];
 function notifyService($rootScope) {
+
+    'use strict';
 
     $rootScope.queue = [];
     var serviceObject = {};
@@ -132,11 +133,32 @@ function notifyService($rootScope) {
             $rootScope.queue.shift();
         }, 3000);
     },
-
-    serviceObject.pop = function () {
-        $rootScope.queue.pop();
-    }
+        serviceObject.pop = function () {
+            $rootScope.queue.pop();
+        };
 
     return serviceObject;
+}
 
+//share service to share data between controllers
+shareService.$inject = ['$rootScope'];
+function shareService($rootScope) {
+
+    'use strict';
+
+    var serviceObject = {};
+
+    //publish event to another scope
+    serviceObject.raiseEvent = function (name, data) {
+        $rootScope.$broadcast(name, data);
+    };
+
+    //listen event to handle
+    serviceObject.onEvent = function ($scope, name, handler) {
+        $scope.$on(name, function (event, args) {
+            handler(args);
+        });
+    };
+
+    return serviceObject;
 }
