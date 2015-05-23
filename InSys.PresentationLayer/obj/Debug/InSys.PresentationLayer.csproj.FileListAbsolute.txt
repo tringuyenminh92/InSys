@@ -116,3 +116,4 @@ C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLaye
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\AutoMapper.dll
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\AutoMapper.pdb
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\AutoMapper.xml
+C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\AutoMapper.Net4.dll

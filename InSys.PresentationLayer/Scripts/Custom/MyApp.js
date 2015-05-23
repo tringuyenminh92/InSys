@@ -14,13 +14,13 @@
 
     'use strict';
 
-    angular.module("GlobalModule", ['ngRoute', 'ui.bootstrap', 'ngTouch', 'ui.grid', 'ui.grid.pagination', 'ui.grid.edit', 'ui.grid.resizeColumns',
+    angular.module('GlobalModule', ['ngRoute', 'ui.bootstrap', 'ngTouch', 'ui.grid', 'ui.grid.pagination', 'ui.grid.edit', 'ui.grid.resizeColumns',
                                     'ui.grid.selection', 'ui.grid.moveColumns', 'ui.grid.saveState', 'ui.bootstrap', 'ngTagsInput', 'ngSanitize', 'ui.select']);
 
     angular.module("GlobalModule").run(rootModal);
-    angular.module("GlobalModule").factory('modalService', ModalService);
-    angular.module("GlobalModule").factory('notifyService', ModalService);
-    angular.module("GlobalModule").factory('shareService', ModalService);
+    angular.module("GlobalModule").factory('modalService', modalService);
+    angular.module("GlobalModule").factory('notifyService', notifyService);
+    angular.module("GlobalModule").factory('shareService', shareService);
 
 })();
 
@@ -47,9 +47,9 @@ function rootModal($rootScope, $modal) {
 }
 
 // Controller xu ly cac thao tac cua message Modal
-angular.module("GlobalModule").controller('messageModalController', MessageModalController);
-MessageModalController.$inject = ['$scope', '$modalInstance', 'passData'];
-function MessageModalController($scope, $modalInstance, passData) {
+angular.module("GlobalModule").controller('messageModalController', messageModalController);
+messageModalController.$inject = ['$scope', '$modalInstance', 'passData'];
+function messageModalController($scope, $modalInstance, passData) {
 
     //set data in modal scope
     $scope.data = passData;
@@ -86,8 +86,8 @@ function WaitDialog(modalContent) {
 }
 
 //Service to call Modal
-ModalService.$inject = ['$modal'];
-function ModalService($modal) {
+modalService.$inject = ['$modal'];
+function modalService($modal) {
 
     var serviceObject = {};
     serviceObject.ShowModal = function (funcOk, funcCancel, passData) {
