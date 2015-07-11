@@ -28,6 +28,21 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetAnswerByQuestionId" FunctionName="InSysModel.Store.SP_GetAnswerByQuestionId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="InSysModel.SP_GetAnswerByQuestionId_Result">
+          <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="ContentAnswer" ColumnName="ContentAnswer" />
+          <ScalarProperty Name="IsTrue" ColumnName="IsTrue" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Point" ColumnName="Point" />
+          <ScalarProperty Name="NumberAnswers" ColumnName="NumberAnswers" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="T_Answer">
       <EntityTypeMapping TypeName="InSysModel.T_Answer">
         <MappingFragment StoreEntitySet="T_Answer">
@@ -46,6 +61,7 @@
     <EntitySetMapping Name="T_Candidate">
       <EntityTypeMapping TypeName="InSysModel.T_Candidate">
         <MappingFragment StoreEntitySet="T_Candidate">
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
           <ScalarProperty Name="LevelCandidateId" ColumnName="LevelCandidateId" />
           <ScalarProperty Name="Code" ColumnName="Code" />
           <ScalarProperty Name="Description" ColumnName="Description" />
@@ -60,8 +76,8 @@
     <EntitySetMapping Name="T_CategoryMaster">
       <EntityTypeMapping TypeName="InSysModel.T_CategoryMaster">
         <MappingFragment StoreEntitySet="T_CategoryMaster">
-          <ScalarProperty Name="Group" ColumnName="Group" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -128,7 +144,7 @@
       <EntityTypeMapping TypeName="InSysModel.T_LevelQuestionMaster">
         <MappingFragment StoreEntitySet="T_LevelQuestionMaster">
           <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Code" ColumnName="Code" />
@@ -151,6 +167,7 @@
     <EntitySetMapping Name="T_Question">
       <EntityTypeMapping TypeName="InSysModel.T_Question">
         <MappingFragment StoreEntitySet="T_Question">
+          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="CreateByName" ColumnName="CreateByName" />
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
@@ -163,9 +180,9 @@
           <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
           <ScalarProperty Name="Valid" ColumnName="Valid" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApproveComment" ColumnName="ApproveComment" />
           <ScalarProperty Name="ApproveBy" ColumnName="ApproveBy" />
           <ScalarProperty Name="ContentQuestion" ColumnName="ContentQuestion" />
-          <ScalarProperty Name="Time" ColumnName="Time" />
           <ScalarProperty Name="Skill" ColumnName="Skill" />
           <ScalarProperty Name="Type" ColumnName="Type" />
           <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
@@ -210,7 +227,7 @@
           <ScalarProperty Name="Domain" ColumnName="Domain" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="FristName" ColumnName="FristName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
           <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
           <ScalarProperty Name="Description" ColumnName="Description" />

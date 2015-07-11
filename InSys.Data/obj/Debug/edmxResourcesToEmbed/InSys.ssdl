@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="InSysModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="InSysModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="T_Answer">
     <Key>
       <PropertyRef Name="AnswerId" />
@@ -26,6 +26,7 @@
     <Property Name="Description" Type="nvarchar" MaxLength="200" />
     <Property Name="Code" Type="nvarchar" MaxLength="50" />
     <Property Name="LevelCandidateId" Type="int" />
+    <Property Name="Tags" Type="text" />
   </EntityType>
   <EntityType Name="T_CategoryMaster">
     <Key>
@@ -36,8 +37,8 @@
     <Property Name="Name" Type="nvarchar" MaxLength="100" />
     <Property Name="Description" Type="nvarchar" MaxLength="200" />
     <Property Name="IsDelete" Type="bit" />
-    <Property Name="CreateDate" Type="datetime" />
-    <Property Name="Group" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="T_Exam">
     <Key>
@@ -49,7 +50,7 @@
     <Property Name="TimeTest" Type="float" />
     <Property Name="IsDelete" Type="bit" />
     <Property Name="Code" Type="nvarchar" MaxLength="50" />
-    <Property Name="Tags" Type="nvarchar" MaxLength="500" />
+    <Property Name="Tags" Type="text" />
     <Property Name="Description" Type="nvarchar" MaxLength="200" />
     <Property Name="NumberQuestions" Type="int" />
   </EntityType>
@@ -97,7 +98,7 @@
     <Property Name="Code" Type="nvarchar" MaxLength="50" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" />
     <Property Name="Description" Type="nvarchar" MaxLength="200" />
-    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="CreatedDate" Type="datetime" />
     <Property Name="IsDelete" Type="bit" />
   </EntityType>
   <EntityType Name="T_PercentQuestion">
@@ -121,21 +122,22 @@
     <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
     <Property Name="Type" Type="nvarchar" MaxLength="50" />
     <Property Name="Skill" Type="nvarchar" MaxLength="50" />
-    <Property Name="Time" Type="float" />
     <Property Name="ContentQuestion" Type="nvarchar" MaxLength="300" />
     <Property Name="ApproveBy" Type="uniqueidentifier" />
+    <Property Name="ApproveComment" Type="nvarchar" MaxLength="200" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="Valid" Type="bit" />
-    <Property Name="ImagePath" Type="nvarchar" MaxLength="50" />
-    <Property Name="AudioPath" Type="nvarchar" MaxLength="50" />
-    <Property Name="VideoPath" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="200" />
+    <Property Name="AudioPath" Type="nvarchar" MaxLength="200" />
+    <Property Name="VideoPath" Type="nvarchar" MaxLength="200" />
     <Property Name="IsDelete" Type="bit" />
     <Property Name="Code" Type="nvarchar" MaxLength="50" />
     <Property Name="Point" Type="float" />
-    <Property Name="Tags" Type="nvarchar" MaxLength="500" />
+    <Property Name="Tags" Type="text" />
     <Property Name="CategoryId" Type="int" />
     <Property Name="CreatedBy" Type="int" />
     <Property Name="CreateByName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="T_Result">
     <Key>
@@ -165,7 +167,7 @@
     <Property Name="Description" Type="nvarchar" MaxLength="200" />
     <Property Name="IsDelete" Type="bit" />
     <Property Name="CreateDate" Type="datetime" />
-    <Property Name="FristName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
     <Property Name="LastName" Type="nvarchar" MaxLength="50" />
     <Property Name="UserName" Type="nvarchar" MaxLength="50" />
     <Property Name="Domain" Type="nvarchar(max)" />
@@ -346,6 +348,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="SP_GetAnswerByQuestionId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="questionId" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="SP_GetQuestions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="InSysModelStoreContainer">
     <EntitySet Name="T_Answer" EntityType="Self.T_Answer" Schema="dbo" store:Type="Tables" />

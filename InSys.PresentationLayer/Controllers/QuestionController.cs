@@ -48,7 +48,7 @@ namespace InSys.PresentationLayer.Controllers
         /// <returns></returns>
         public JsonResult GetQuestions()
         {
-            return Json(_questionService.GetQuestions(), JsonRequestBehavior.AllowGet);
+            return Json(_questionService.GetQuestions("d5327b5e-cc90-49d2-80d9-05cc881594e9"), JsonRequestBehavior.AllowGet);
         }
 
 

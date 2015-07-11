@@ -95,7 +95,7 @@ function QuestionController($scope, $http, $location, $q, modalService) {
 
     $scope.LoadQuestionData = function () {
         var deferred = $q.defer();
-        $http.get($scope.AppPath + "Question/GetQuestions").success(function (data) {
+        $http.get("Question/GetQuestions").success(function (data) {
             $scope.myData = data;
             deferred.resolve(data);
         }).error(deferred.reject);
@@ -104,11 +104,11 @@ function QuestionController($scope, $http, $location, $q, modalService) {
 
 
     $scope.LoadData = function () {
-        var waitDialog = new WaitDialog();
-        waitDialog.Show();
-        $scope.LoadTypeData().then($scope.LoadCategoryData).then($scope.LoadLevelsData).then($scope.LoadQuestionData).then(function () {
-            waitDialog.Hide();
+        $http.get("Question/GetQuestions").success(function(data) {
         });
+        //$scope.LoadTypeData().then($scope.LoadCategoryData).then($scope.LoadLevelsData).then($scope.LoadQuestionData).then(function () {
+        //    waitDialog.Hide();
+        //});
     };
 
     $scope.TmpDataForEdit = { Code: '', Status: 'UnSubmit', CategoryId: '', Type: '', CreatedDateString: '', LevelQuestionId: '', ContentQuestion: '', TagArray: [] };
@@ -154,7 +154,7 @@ function QuestionController($scope, $http, $location, $q, modalService) {
     function DetailQuestionModalController($scope, $modalInstance, $interval, passData) {
 
         $scope.$scope = $scope;
-            
+
 
 
         //Get index of item in array by its Order

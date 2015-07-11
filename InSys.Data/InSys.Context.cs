@@ -46,5 +46,14 @@ namespace InSys.Data
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetQuestions_Result>("SP_GetQuestions");
         }
+    
+        public virtual ObjectResult<SP_GetAnswerByQuestionId_Result> SP_GetAnswerByQuestionId(string questionId)
+        {
+            var questionIdParameter = questionId != null ?
+                new ObjectParameter("questionId", questionId) :
+                new ObjectParameter("questionId", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_GetAnswerByQuestionId_Result>("SP_GetAnswerByQuestionId", questionIdParameter);
+        }
     }
 }

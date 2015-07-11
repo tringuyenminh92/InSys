@@ -25,7 +25,7 @@ namespace InSys.Data
         public string Description { get; set; }
         public Nullable<bool> IsDelete { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
-        public string FristName { get; set; }
+        public string FirstName { get; set; }
         public string LastName { get; set; }
         public string UserName { get; set; }
         public string Domain { get; set; }

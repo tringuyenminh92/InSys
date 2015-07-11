@@ -5,6 +5,6 @@ namespace InSys.BusinessLayer
 {
     public interface IQuestionService
     {
-        IEnumerable<QuestionViewModel> GetQuestions();
+        IEnumerable<QuestionViewModel> GetQuestions(string questionId);
     }
 }

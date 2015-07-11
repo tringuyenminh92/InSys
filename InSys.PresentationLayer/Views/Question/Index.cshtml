@@ -25,8 +25,7 @@
     ViewBag.Title = "Questions Page";
 }
 
-<script src="~/Scripts/CustomScript/QuestionController.js"></script>
-
+<script src="~/Scripts/Custom/QuestionController.js"></script>
 @* Template for ngTags *@
 <script type="text/ng-template" id="CustomTemplateWithIcon">
     <div class="tag-template">
@@ -79,7 +78,7 @@
         <tags-input ng-class="col-md-5" ng-model="SearchInput" min-length="2" replace-spaces-with-dashes="false" placeholder="Search options" template="CustomTemplateWithIcon"></tags-input>
     </div>
     @* Question Grid Area *@
-    <div class="col-sm-offset-1 col-md-10 row" ng-init="loadData()">
+    <div class="col-sm-offset-1 col-md-10 row" ng-init="LoadData()">
         <br />
         <div>
             <div class="gridStyle" external-scopes="$scope" ui-grid-pagination ui-grid-resize-columns ui-grid="gridOptions"></div>

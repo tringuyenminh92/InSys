@@ -25,7 +25,7 @@ namespace InSys.Data
         public string Code { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public Nullable<System.DateTime> CreateDate { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<bool> IsDelete { get; set; }
     
         public virtual ICollection<T_PercentQuestion> T_PercentQuestion { get; set; }

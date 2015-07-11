@@ -9,26 +9,20 @@
 
 namespace InSys.Data
 {
-    using System;
-    using System.Collections.Generic;
-    
     using InSys.Repository.Pattern.Ef6;
-    public partial class T_CategoryMaster : Entity
-    {
-        public T_CategoryMaster()
-        {
-            this.T_Question = new HashSet<T_Question>();
-        }
+    using System;
     
-        public int CategoryId { get; set; }
+    public partial class SP_GetAnswerByQuestionId_Result : Entity
+    {
+        public System.Guid AnswerId { get; set; }
         public string Code { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public Nullable<System.Guid> QuestionId { get; set; }
+        public string ContentAnswer { get; set; }
+        public Nullable<bool> IsTrue { get; set; }
         public Nullable<bool> IsDelete { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
-        public string GroupName { get; set; }
-    
-        public virtual ICollection<T_Question> T_Question { get; set; }
+        public Nullable<double> Point { get; set; }
+        public Nullable<int> NumberAnswers { get; set; }
     }
 
 }

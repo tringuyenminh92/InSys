@@ -18,6 +18,7 @@ using InSys.Repository.Pattern.UnitOfWork;
 using InSys.ViewModel;
 using log4net;
 using AutoMapper;
+using System.Data.SqlClient;
 
 namespace InSys.BusinessLayer
 {
@@ -26,18 +27,19 @@ namespace InSys.BusinessLayer
         private static readonly ILog _logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private static readonly bool isErrorEnabled = _logger.IsErrorEnabled;
 
-        private readonly IRepositoryAsync<T_Question> _repository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly ISpContext _spContext;
 
-        public QuestionService(IRepositoryAsync<T_Question> repository, IUnitOfWork unitOfWork)
+        public QuestionService( IUnitOfWork unitOfWork,ISpContext spContext)
         {
-            _repository = repository;
             _unitOfWork = unitOfWork;
+            _spContext = spContext;
         }
-        public IEnumerable<QuestionViewModel> GetQuestions()
+        public IEnumerable<QuestionViewModel> GetQuestions(string questionId)
         {
-            Mapper.CreateMap<T_Question, QuestionViewModel>();
-            return  Mapper.Map<IEnumerable<T_Question>,IEnumerable<QuestionViewModel>>(_repository.Query().Select());
+            //return  Mapper.Map<IEnumerable<T_Question>,IEnumerable<QuestionViewModel>>(_repository.Query().Select());
+           var rs= _spContext.GetAnswerByQuestionId(questionId).ToList();
+            return null;
         }
     }
 }

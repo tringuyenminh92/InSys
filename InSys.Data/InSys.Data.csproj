@@ -67,7 +67,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>InSys.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ISpContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SPContext.cs" />
+    <Compile Include="SP_GetAnswerByQuestionId_Result.cs">
+      <DependentUpon>InSys.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_GetQuestions_Result.cs">
       <DependentUpon>InSys.tt</DependentUpon>
     </Compile>

@@ -27,9 +27,9 @@ namespace InSys.Data
         public string CategoryName { get; set; }
         public string Type { get; set; }
         public string Skill { get; set; }
-        public Nullable<double> Time { get; set; }
         public string ContentQuestion { get; set; }
         public Nullable<System.Guid> ApproveBy { get; set; }
+        public string ApproveComment { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<bool> Valid { get; set; }
         public string ImagePath { get; set; }
@@ -42,6 +42,7 @@ namespace InSys.Data
         public Nullable<int> CategoryId { get; set; }
         public Nullable<int> CreatedBy { get; set; }
         public string CreateByName { get; set; }
+        public string Status { get; set; }
     
         public virtual ICollection<T_Answer> T_Answer { get; set; }
         public virtual T_CategoryMaster T_CategoryMaster { get; set; }

@@ -47,7 +47,7 @@ namespace InSys.PresentationLayer.App_Start
                 .RegisterType<IDataContext, InSysEntities>(new PerRequestLifetimeManager())
                 .RegisterType<IUnitOfWork, UnitOfWork>(new PerRequestLifetimeManager())
                 .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
-                .RegisterType<IRepositoryAsync<T_Question>, Repository<T_Question>>()
+                .RegisterType<ISpContext, InSysEntities>(new PerRequestLifetimeManager())
                 .RegisterType<IQuestionService, QuestionService>();
         }
     }

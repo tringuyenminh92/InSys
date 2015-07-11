@@ -28,6 +28,7 @@ namespace InSys.Data
         public string Description { get; set; }
         public string Code { get; set; }
         public Nullable<int> LevelCandidateId { get; set; }
+        public string Tags { get; set; }
     
         public virtual ICollection<T_ExamCandidate> T_ExamCandidate { get; set; }
         public virtual T_LevelCandidate T_LevelCandidate { get; set; }

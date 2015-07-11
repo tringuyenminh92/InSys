@@ -113,7 +113,4 @@ C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLaye
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\EntityFramework.SqlServer.xml
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\InSys.Helper.dll
 C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\InSys.Helper.pdb
-C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\AutoMapper.dll
-C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\AutoMapper.pdb
-C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\AutoMapper.xml
-C:\Users\BeGa\documents\visual studio 2013\Projects\InSys\InSys.PresentationLayer\bin\AutoMapper.Net4.dll
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\InSys\InSys.PresentationLayer\bin\AutoMapper.Net4.dll
